@@ -28,53 +28,102 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         Background = new javax.swing.JPanel();
-        Sidepane = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        lblActividades = new javax.swing.JLabel();
+        lblTiempo = new javax.swing.JLabel();
+        lblUsuarios = new javax.swing.JLabel();
+        lblAjustes = new javax.swing.JLabel();
+        lblSoccios = new javax.swing.JLabel();
+        lblIdeas = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Sidepane.setBackground(new java.awt.Color(127, 21, 17));
-        Sidepane.setForeground(new java.awt.Color(127, 21, 17));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout SidepaneLayout = new javax.swing.GroupLayout(Sidepane);
-        Sidepane.setLayout(SidepaneLayout);
-        SidepaneLayout.setHorizontalGroup(
-            SidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
-        );
-        SidepaneLayout.setVerticalGroup(
-            SidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 815, Short.MAX_VALUE)
-        );
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 911, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        lblActividades.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblActividades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Today_96px.png"))); // NOI18N
+        lblActividades.setBorder(new javax.swing.border.MatteBorder(null));
+        lblActividades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 155, 151));
 
-        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
-        Background.setLayout(BackgroundLayout);
-        BackgroundLayout.setHorizontalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addComponent(Sidepane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        BackgroundLayout.setVerticalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Sidepane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        lblTiempo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTiempo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Clock_96px.png"))); // NOI18N
+        lblTiempo.setBorder(new javax.swing.border.MatteBorder(null));
+        lblTiempo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 155, 151));
+
+        lblUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_User_96px_2.png"))); // NOI18N
+        lblUsuarios.setBorder(new javax.swing.border.MatteBorder(null));
+        lblUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 155, 151));
+
+        lblAjustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Maintenance_96px.png"))); // NOI18N
+        lblAjustes.setBorder(new javax.swing.border.MatteBorder(null));
+        lblAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 155, 151));
+
+        lblSoccios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSoccios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Handshake_96px.png"))); // NOI18N
+        lblSoccios.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.add(lblSoccios, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 156, 151));
+
+        lblIdeas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIdeas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Idea_96px.png"))); // NOI18N
+        lblIdeas.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.add(lblIdeas, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 156, 151));
+
+        jLabel7.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(196, 80, 1));
+        jLabel7.setText("Ajustes");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel6.setText("Nuevo");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+
+        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 1110, 510));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Minerva_1.png"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 240));
+
+        jLabel2.setFont(new java.awt.Font("Decker", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel2.setText("CONTROL DE TRABAJOS DE GRADOS");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 590, 40));
+
+        jLabel3.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setText("UNIVERSIDAD DE EL SALVADOR");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Minimizar.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, -1, 30));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Cerrar.png"))); // NOI18N
+        jLabel5.setToolTipText("");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 10, -1, -1));
+
+        Background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,7 +176,20 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JPanel Sidepane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblActividades;
+    private javax.swing.JLabel lblAjustes;
+    private javax.swing.JLabel lblIdeas;
+    private javax.swing.JLabel lblSoccios;
+    private javax.swing.JLabel lblTiempo;
+    private javax.swing.JLabel lblUsuarios;
     // End of variables declaration//GEN-END:variables
 }
