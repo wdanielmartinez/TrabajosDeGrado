@@ -4,6 +4,7 @@ public class Inicio extends javax.swing.JFrame {
 
     public Inicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -38,45 +39,45 @@ public class Inicio extends javax.swing.JFrame {
         lblActividades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Today_96px.png"))); // NOI18N
         lblActividades.setBorder(new javax.swing.border.MatteBorder(null));
         lblActividades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 155, 151));
+        jPanel1.add(lblActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 155, 151));
 
         lblTiempo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTiempo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Clock_96px.png"))); // NOI18N
         lblTiempo.setBorder(new javax.swing.border.MatteBorder(null));
         lblTiempo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 155, 151));
+        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 155, 151));
 
         lblUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_User_96px_2.png"))); // NOI18N
         lblUsuarios.setBorder(new javax.swing.border.MatteBorder(null));
         lblUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 155, 151));
+        jPanel1.add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 155, 151));
 
         lblAjustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Maintenance_96px.png"))); // NOI18N
         lblAjustes.setBorder(new javax.swing.border.MatteBorder(null));
         lblAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 155, 151));
+        jPanel1.add(lblAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 155, 151));
 
         lblSoccios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSoccios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Handshake_96px.png"))); // NOI18N
         lblSoccios.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.add(lblSoccios, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 156, 151));
+        jPanel1.add(lblSoccios, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 156, 151));
 
         lblIdeas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIdeas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Idea_96px.png"))); // NOI18N
         lblIdeas.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel1.add(lblIdeas, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 156, 151));
+        jPanel1.add(lblIdeas, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 156, 151));
 
         jLabel7.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(196, 80, 1));
         jLabel7.setText("Ajustes");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 51, 51));
         jLabel6.setText("Nuevo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
         Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 1110, 510));
 
@@ -89,8 +90,8 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Decker", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel2.setText("CONTROL DE TRABAJOS DE GRADOS");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 590, 40));
+        jLabel2.setText("CONTROL DE TRABAJOS DE GRADO");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 710, 40));
 
         jLabel3.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));

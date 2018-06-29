@@ -68,7 +68,6 @@ public class Login extends javax.swing.JFrame {
 
         lblKey.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Key.png"))); // NOI18N
 
-        jPassword.setBackground(new java.awt.Color(255, 255, 255));
         jPassword.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jPassword.setForeground(new java.awt.Color(210, 85, 79));
         jPassword.setText("jPasswordField1");
@@ -80,7 +79,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        IngresarUsuario.setBackground(new java.awt.Color(255, 255, 255));
         IngresarUsuario.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         IngresarUsuario.setForeground(new java.awt.Color(210, 85, 79));
         IngresarUsuario.setText("Ingrese el usuario...");
@@ -101,6 +99,16 @@ public class Login extends javax.swing.JFrame {
         jbntIniciarSesion.setForeground(new java.awt.Color(129, 19, 14));
         jbntIniciarSesion.setText("Iniciar sesión");
         jbntIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbntIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbntIniciarSesionMouseClicked(evt);
+            }
+        });
+        jbntIniciarSesion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbntIniciarSesionKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LoginPaneLayout = new javax.swing.GroupLayout(LoginPane);
         LoginPane.setLayout(LoginPaneLayout);
@@ -195,6 +203,7 @@ public class Login extends javax.swing.JFrame {
 
     private void IngresarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarUsuarioMouseClicked
         IngresarUsuario.setText("");
+        
     }//GEN-LAST:event_IngresarUsuarioMouseClicked
 
     private void jPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordMouseClicked
@@ -204,6 +213,14 @@ public class Login extends javax.swing.JFrame {
     private void IngresarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IngresarUsuarioActionPerformed
+
+    private void jbntIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntIniciarSesionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbntIniciarSesionMouseClicked
+
+    private void jbntIniciarSesionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbntIniciarSesionKeyPressed
+        
+    }//GEN-LAST:event_jbntIniciarSesionKeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
