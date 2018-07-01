@@ -36,6 +36,8 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtCarnet = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         txtPlanEstudio = new javax.swing.JTextField();
+        lblUnidadesValorativas = new javax.swing.JLabel();
+        txtUnidadesValorativas = new javax.swing.JTextField();
         lblPaginaUno = new javax.swing.JLabel();
         lblAnioAcademico1 = new javax.swing.JLabel();
         txtAnioAcademico = new javax.swing.JTextField();
@@ -77,7 +79,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         lblGuardar.setForeground(new java.awt.Color(255, 102, 102));
         lblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_next_2.png"))); // NOI18N
-        lblGuardar.setText("Guardar");
+        lblGuardar.setText("Aceptar");
         lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(lblGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 160, 60));
 
@@ -151,6 +153,11 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtCarnet.setBackground(new java.awt.Color(204, 204, 204));
         txtCarnet.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtCarnet.setForeground(new java.awt.Color(0, 51, 51));
+        txtCarnet.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCarnetKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 220, 30));
 
         txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
@@ -173,9 +180,29 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         });
         jPanel2.add(txtPlanEstudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 170, 30));
 
+        lblUnidadesValorativas.setBackground(new java.awt.Color(0, 0, 0));
+        lblUnidadesValorativas.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
+        lblUnidadesValorativas.setText("Total Unidades U.V.");
+        jPanel2.add(lblUnidadesValorativas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+
+        txtUnidadesValorativas.setBackground(new java.awt.Color(204, 204, 204));
+        txtUnidadesValorativas.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        txtUnidadesValorativas.setForeground(new java.awt.Color(0, 51, 51));
+        txtUnidadesValorativas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUnidadesValorativasActionPerformed(evt);
+            }
+        });
+        txtUnidadesValorativas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUnidadesValorativasKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtUnidadesValorativas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, 230, 30));
+
         lblPaginaUno.setFont(new java.awt.Font("Decker", 1, 12)); // NOI18N
         lblPaginaUno.setText("Página 2 de 2");
-        jPanel2.add(lblPaginaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, -1, -1));
+        jPanel2.add(lblPaginaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, -1));
 
         lblAnioAcademico1.setBackground(new java.awt.Color(0, 0, 0));
         lblAnioAcademico1.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
@@ -190,7 +217,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
                 txtAnioAcademicoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtAnioAcademico, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 90, 30));
+        jPanel2.add(txtAnioAcademico, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 90, 30));
 
         cboxCiclo.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
         cboxCiclo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "I", "II" }));
@@ -210,7 +237,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         });
         jPanel2.add(cboxCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 144, 550, -1));
 
-        lblAnioIngreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        lblAnioIngreso.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblAnioIngreso.setText("Año de ingreso:");
         jPanel2.add(lblAnioIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
 
@@ -221,9 +248,9 @@ public class IngresarPagina1 extends javax.swing.JFrame {
                 txtAnioIngresoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtAnioIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 150, -1));
+        jPanel2.add(txtAnioIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 150, -1));
 
-        lblAnioEgreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        lblAnioEgreso.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblAnioEgreso.setText("Año de egreso:");
         jPanel2.add(lblAnioEgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, -1, -1));
 
@@ -234,9 +261,9 @@ public class IngresarPagina1 extends javax.swing.JFrame {
                 txtAnioEgresoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtAnioEgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 120, -1));
+        jPanel2.add(txtAnioEgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 120, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 1110, 450));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 1110, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -252,6 +279,10 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
         char c = evt.getKeyChar();
         if((c<'a' || c>'z')&&(c<'A' || c>'Z') &&(c!=KeyEvent.VK_SPACE)) evt.consume();
+        if(txtNombre.getText().length()==30){
+        
+            evt.consume();
+        }
         //else if(c=52)evt.consume();
     }//GEN-LAST:event_txtNombreKeyTyped
 
@@ -308,6 +339,25 @@ public class IngresarPagina1 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtAnioEgresoKeyTyped
+
+    private void txtUnidadesValorativasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnidadesValorativasKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9') evt.consume();
+        if(txtUnidadesValorativas.getText().length()>=3){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtUnidadesValorativasKeyTyped
+
+    private void txtUnidadesValorativasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadesValorativasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUnidadesValorativasActionPerformed
+
+    private void txtCarnetKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCarnetKeyTyped
+        if(txtCarnet.getText().length()==7){
+        
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCarnetKeyTyped
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -366,6 +416,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblPaginaUno;
     private javax.swing.JLabel lblPlanEstudio;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblUnidadesValorativas;
     private javax.swing.JTextField txtAnioAcademico;
     private javax.swing.JTextField txtAnioEgreso;
     private javax.swing.JTextField txtAnioIngreso;
@@ -376,5 +427,6 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPlanEstudio;
     private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtUnidadesValorativas;
     // End of variables declaration//GEN-END:variables
 }
