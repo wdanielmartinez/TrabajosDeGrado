@@ -279,7 +279,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
         char c = evt.getKeyChar();
         if((c<'a' || c>'z')&&(c<'A' || c>'Z') &&(c!=KeyEvent.VK_SPACE)) evt.consume();
-        if(txtNombre.getText().length()==30){
+        if(txtNombre.getText().length()==60){
         
             evt.consume();
         }
@@ -289,6 +289,10 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
         char c = evt.getKeyChar();
         if((c<'a' || c>'z')&&(c<'A' || c>'Z') &&(c!=KeyEvent.VK_SPACE)) evt.consume();
+        if(txtApellidos.getText().length()==60){
+        
+            evt.consume();
+        }
     }//GEN-LAST:event_txtApellidosKeyTyped
 
     private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped

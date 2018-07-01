@@ -13,6 +13,7 @@ public class Inicio extends javax.swing.JFrame {
 
         Background = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lblActividades = new javax.swing.JLabel();
         lblTiempo = new javax.swing.JLabel();
@@ -35,6 +36,11 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel8.setText("Ver progreso");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 51, 51));
         jLabel6.setText("Nueva Tesis");
@@ -50,6 +56,11 @@ public class Inicio extends javax.swing.JFrame {
         lblTiempo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Clock_96px.png"))); // NOI18N
         lblTiempo.setBorder(new javax.swing.border.MatteBorder(null));
         lblTiempo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblTiempo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTiempoMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 155, 151));
 
         lblUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -134,6 +145,12 @@ public class Inicio extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lblUsuariosMouseClicked
 
+    private void lblTiempoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTiempoMouseClicked
+        frameVerProgreso progreso = new frameVerProgreso();
+        progreso.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblTiempoMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -175,6 +192,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblActividades;
