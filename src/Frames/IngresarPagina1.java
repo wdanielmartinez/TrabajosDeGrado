@@ -19,7 +19,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         lblLogoMinerva = new javax.swing.JLabel();
         lblIngresarAlumnoTitulo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        lblNext = new javax.swing.JLabel();
+        lblGuardar = new javax.swing.JLabel();
         lblCiclo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblApellidos = new javax.swing.JLabel();
@@ -41,6 +41,10 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtAnioAcademico = new javax.swing.JTextField();
         cboxCiclo = new javax.swing.JComboBox<>();
         cboxCarrera = new javax.swing.JComboBox<>();
+        lblAnioIngreso = new javax.swing.JLabel();
+        txtAnioIngreso = new javax.swing.JTextField();
+        lblAnioEgreso = new javax.swing.JLabel();
+        txtAnioEgreso = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,13 +73,13 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblNext.setFont(new java.awt.Font("Decker", 1, 18)); // NOI18N
-        lblNext.setForeground(new java.awt.Color(255, 102, 102));
-        lblNext.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_next_2.png"))); // NOI18N
-        lblNext.setText("Siguiente");
-        lblNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(lblNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 160, 60));
+        lblGuardar.setFont(new java.awt.Font("Decker", 1, 18)); // NOI18N
+        lblGuardar.setForeground(new java.awt.Color(255, 102, 102));
+        lblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_next_2.png"))); // NOI18N
+        lblGuardar.setText("Guardar");
+        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(lblGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 160, 60));
 
         lblCiclo.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblCiclo.setText("Ciclo:");
@@ -170,7 +174,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         jPanel2.add(txtPlanEstudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 170, 30));
 
         lblPaginaUno.setFont(new java.awt.Font("Decker", 1, 12)); // NOI18N
-        lblPaginaUno.setText("Página 1 de 2");
+        lblPaginaUno.setText("Página 2 de 2");
         jPanel2.add(lblPaginaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, -1, -1));
 
         lblAnioAcademico1.setBackground(new java.awt.Color(0, 0, 0));
@@ -205,6 +209,32 @@ public class IngresarPagina1 extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cboxCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 144, 550, -1));
+
+        lblAnioIngreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        lblAnioIngreso.setText("Año de ingreso:");
+        jPanel2.add(lblAnioIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+
+        txtAnioIngreso.setBackground(new java.awt.Color(204, 204, 204));
+        txtAnioIngreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        txtAnioIngreso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAnioIngresoKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtAnioIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 150, -1));
+
+        lblAnioEgreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        lblAnioEgreso.setText("Año de egreso:");
+        jPanel2.add(lblAnioEgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, -1, -1));
+
+        txtAnioEgreso.setBackground(new java.awt.Color(204, 204, 204));
+        txtAnioEgreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        txtAnioEgreso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAnioEgresoKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtAnioEgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 120, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 1110, 450));
 
@@ -263,6 +293,22 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cboxCarreraItemStateChanged
 
+    private void txtAnioIngresoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnioIngresoKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9') evt.consume();
+        if(txtAnioIngreso.getText().length()>=4){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAnioIngresoKeyTyped
+
+    private void txtAnioEgresoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnioEgresoKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9') evt.consume();
+        if(txtAnioEgreso.getText().length()>=4){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAnioEgresoKeyTyped
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -304,6 +350,8 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblAnioAcademico1;
+    private javax.swing.JLabel lblAnioEgreso;
+    private javax.swing.JLabel lblAnioIngreso;
     private javax.swing.JLabel lblApellidos;
     private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblCarnet;
@@ -311,14 +359,16 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblCiclo;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDireccionResidencia;
+    private javax.swing.JLabel lblGuardar;
     private javax.swing.JLabel lblIngresarAlumnoTitulo;
     private javax.swing.JLabel lblLogoMinerva;
-    private javax.swing.JLabel lblNext;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPaginaUno;
     private javax.swing.JLabel lblPlanEstudio;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JTextField txtAnioAcademico;
+    private javax.swing.JTextField txtAnioEgreso;
+    private javax.swing.JTextField txtAnioIngreso;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtCarnet;
     private javax.swing.JTextField txtCodigo;

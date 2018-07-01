@@ -13,6 +13,7 @@ public class Inicio extends javax.swing.JFrame {
 
         Background = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         lblActividades = new javax.swing.JLabel();
         lblTiempo = new javax.swing.JLabel();
         lblUsuarios = new javax.swing.JLabel();
@@ -20,7 +21,6 @@ public class Inicio extends javax.swing.JFrame {
         lblSoccios = new javax.swing.JLabel();
         lblIdeas = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -34,6 +34,11 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel6.setText("Nueva Tesis");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
         lblActividades.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblActividades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Today_96px.png"))); // NOI18N
@@ -51,6 +56,11 @@ public class Inicio extends javax.swing.JFrame {
         lblUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_User_96px_2.png"))); // NOI18N
         lblUsuarios.setBorder(new javax.swing.border.MatteBorder(null));
         lblUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUsuariosMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 155, 151));
 
         lblAjustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -73,11 +83,6 @@ public class Inicio extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(196, 80, 1));
         jLabel7.setText("Ajustes");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel6.setText("Nuevo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
         Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 1110, 510));
 
@@ -122,6 +127,12 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUsuariosMouseClicked
+        IngresarPagina2 tesis = new IngresarPagina2();
+        tesis.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblUsuariosMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
