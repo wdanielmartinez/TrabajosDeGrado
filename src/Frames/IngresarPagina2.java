@@ -35,7 +35,6 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         lblFechaAsesoria = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaTema = new javax.swing.JTextArea();
-        txtHora = new javax.swing.JTextField();
         txtFechaAsesoria = new javax.swing.JTextField();
         rbtnOpcion1 = new javax.swing.JRadioButton();
         rbtnOpcion2 = new javax.swing.JRadioButton();
@@ -44,6 +43,10 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         txtCuantoTiempo = new javax.swing.JTextField();
         lblNumIntegrantes = new javax.swing.JLabel();
         txtNumIntegrantes = new javax.swing.JTextField();
+        cboxHora = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,11 +173,6 @@ public class IngresarPagina2 extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 920, 110));
 
-        txtHora.setBackground(new java.awt.Color(204, 204, 204));
-        txtHora.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
-        txtHora.setForeground(new java.awt.Color(0, 51, 51));
-        jPanel2.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 160, 30));
-
         txtFechaAsesoria.setBackground(new java.awt.Color(204, 204, 204));
         txtFechaAsesoria.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtFechaAsesoria.setForeground(new java.awt.Color(0, 51, 51));
@@ -186,6 +184,11 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         rbtnOpcion1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 rbtnOpcion1ItemStateChanged(evt);
+            }
+        });
+        rbtnOpcion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnOpcion1MouseClicked(evt);
             }
         });
         rbtnOpcion1.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +206,11 @@ public class IngresarPagina2 extends javax.swing.JFrame {
                 rbtnOpcion2ItemStateChanged(evt);
             }
         });
+        rbtnOpcion2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnOpcion2MouseClicked(evt);
+            }
+        });
         jPanel2.add(rbtnOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, -1, -1));
 
         btnGroupTiempo.add(rbtnOpcion3);
@@ -211,6 +219,11 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         rbtnOpcion3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 rbtnOpcion3ItemStateChanged(evt);
+            }
+        });
+        rbtnOpcion3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnOpcion3MouseClicked(evt);
             }
         });
         jPanel2.add(rbtnOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, -1, -1));
@@ -223,7 +236,7 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         txtCuantoTiempo.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
         jPanel2.add(txtCuantoTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 200, -1));
 
-        lblNumIntegrantes.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        lblNumIntegrantes.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblNumIntegrantes.setText("Número de integrantes del grupo:");
         jPanel2.add(lblNumIntegrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 390, -1));
 
@@ -235,6 +248,22 @@ public class IngresarPagina2 extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtNumIntegrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 120, -1));
+
+        cboxHora.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        cboxHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jPanel2.add(cboxHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 70, -1));
+
+        jLabel1.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
+        jLabel1.setText(":");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, 10, -1));
+
+        jComboBox1.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, -1, -1));
+
+        jComboBox2.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A.M.", "P.M." }));
+        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 90, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1150, 580));
 
@@ -286,6 +315,20 @@ public class IngresarPagina2 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtNumIntegrantesKeyTyped
+
+    private void rbtnOpcion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnOpcion1MouseClicked
+        txtCuantoTiempo.setEditable(false);
+        txtCuantoTiempo.setText("");
+    }//GEN-LAST:event_rbtnOpcion1MouseClicked
+
+    private void rbtnOpcion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnOpcion2MouseClicked
+         txtCuantoTiempo.setEditable(false);
+         txtCuantoTiempo.setText("");
+    }//GEN-LAST:event_rbtnOpcion2MouseClicked
+
+    private void rbtnOpcion3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnOpcion3MouseClicked
+         txtCuantoTiempo.setEditable(true);
+    }//GEN-LAST:event_rbtnOpcion3MouseClicked
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -322,6 +365,10 @@ public class IngresarPagina2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGroupTiempo;
+    private javax.swing.JComboBox<String> cboxHora;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCuantoTiempo;
     private javax.swing.JPanel jPanel1;
@@ -348,7 +395,6 @@ public class IngresarPagina2 extends javax.swing.JFrame {
     private javax.swing.JTextField txtCuantoTiempo;
     private javax.swing.JTextField txtDirector;
     private javax.swing.JTextField txtFechaAsesoria;
-    private javax.swing.JTextField txtHora;
     private javax.swing.JTextField txtLugarTrabajo;
     private javax.swing.JTextField txtNumIntegrantes;
     private javax.swing.JTextField txtTelefonoTrabajo;
