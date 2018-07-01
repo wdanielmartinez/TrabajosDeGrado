@@ -82,6 +82,11 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         lblSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_next_2.png"))); // NOI18N
         lblSiguiente.setText("Siguiente");
         lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSiguienteMouseClicked(evt);
+            }
+        });
         jPanel2.add(lblSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 490, 160, 60));
 
         lblTelefonoTrabajo.setBackground(new java.awt.Color(0, 0, 0));
@@ -329,6 +334,11 @@ public class IngresarPagina2 extends javax.swing.JFrame {
     private void rbtnOpcion3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnOpcion3MouseClicked
          txtCuantoTiempo.setEditable(true);
     }//GEN-LAST:event_rbtnOpcion3MouseClicked
+
+    private void lblSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSiguienteMouseClicked
+        int contador, integrantes=Integer.parseInt(txtNumIntegrantes.getText());
+        //Aquí va el for para mostrar los formularios de alumno
+    }//GEN-LAST:event_lblSiguienteMouseClicked
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

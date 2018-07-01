@@ -56,6 +56,11 @@ public class Inicio extends javax.swing.JFrame {
         lblTiempo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Clock_96px.png"))); // NOI18N
         lblTiempo.setBorder(new javax.swing.border.MatteBorder(null));
         lblTiempo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblTiempo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTiempoMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 155, 151));
 
         lblUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,6 +144,12 @@ public class Inicio extends javax.swing.JFrame {
         tesis.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblUsuariosMouseClicked
+
+    private void lblTiempoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTiempoMouseClicked
+        frameVerProgreso progreso = new frameVerProgreso();
+        progreso.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblTiempoMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

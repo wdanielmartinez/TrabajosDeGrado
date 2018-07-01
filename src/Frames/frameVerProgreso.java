@@ -5,7 +5,7 @@ public class frameVerProgreso extends javax.swing.JFrame {
     public frameVerProgreso() {
         initComponents();
         this.setLocationRelativeTo(null);
-        txtCuantoTiempo.setEditable(false);
+        
     }
 
     @SuppressWarnings("unchecked")
