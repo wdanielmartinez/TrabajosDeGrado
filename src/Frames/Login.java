@@ -215,7 +215,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_IngresarUsuarioActionPerformed
 
     private void jbntIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntIniciarSesionMouseClicked
+    String Usuario="admin";
+        String Contraseña="@dm1n";
+        String pass= new String(jPass.getPassword());
         
+        if(IngresarUsuario.getText().equalsIgnoreCase(Usuario) && pass.equals(Contraseña)){
+            Inicio menu = new Inicio();
+            menu.setVisible(true);
+            this.dispose();
+            
+        } else{
+            JOptionPane.showMessageDialog(this, "Usuario o Contraseña incorrecta, intente de nuevo.");
+            jPass.setText("");
+        }
     }//GEN-LAST:event_jbntIniciarSesionMouseClicked
 
     private void jbntIniciarSesionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbntIniciarSesionKeyPressed

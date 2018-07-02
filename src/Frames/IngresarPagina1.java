@@ -62,6 +62,11 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_back_2.png"))); // NOI18N
         lblBack.setText("Regresar");
         lblBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBackMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 60));
 
         lblLogoMinerva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/MinervaPag.png"))); // NOI18N
@@ -454,8 +459,21 @@ public class IngresarPagina1 extends javax.swing.JFrame {
                 || (txtPlanEstudio.getText().equals("") || (txtCodigo.getText().equals("")) || (txtAnioIngreso.getText().equals(""))
                 || (txtAnioEgreso.getText().equals("")) || (txtUnidadesValorativas.getText().equals("")) )){
             JOptionPane.showMessageDialog(this, "Por favor llene todos los campos");
+            
+            
+        }
+        else{
+            this.dispose();
+            Inicio inicio = new Inicio();
+            inicio.setVisible(true);
         }
     }//GEN-LAST:event_lblGuardarMouseClicked
+
+    private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
+        IngresarPagina2 tesis = new IngresarPagina2();
+        tesis.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblBackMouseClicked
 //>>>>>>> 6f39aee5575fd00f0dd210a96d52ba537596cd68
 
     public static void main(String args[]) {

@@ -33,6 +33,11 @@ public class frameVerProgreso extends javax.swing.JFrame {
         lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_back_2.png"))); // NOI18N
         lblBack.setText("Regresar");
         lblBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBackMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 60));
 
         lblIngresarAlumnoTitulo.setFont(new java.awt.Font("Decker", 1, 36)); // NOI18N
@@ -64,6 +69,12 @@ public class frameVerProgreso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
+        Inicio inicio = new Inicio();
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblBackMouseClicked
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
