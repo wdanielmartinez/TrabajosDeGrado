@@ -24,7 +24,7 @@ public class Login extends javax.swing.JFrame {
         lblKey = new javax.swing.JLabel();
         jSeparatorDos = new javax.swing.JSeparator();
         jSeparatorUno = new javax.swing.JSeparator();
-        jPassword = new javax.swing.JPasswordField();
+        jPass = new javax.swing.JPasswordField();
         IngresarUsuario = new javax.swing.JTextField();
         jbntIniciarSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -68,14 +68,14 @@ public class Login extends javax.swing.JFrame {
 
         lblKey.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Key.png"))); // NOI18N
 
-        jPassword.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
-        jPassword.setForeground(new java.awt.Color(210, 85, 79));
-        jPassword.setText("jPasswordField1");
-        jPassword.setBorder(null);
-        jPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPass.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jPass.setForeground(new java.awt.Color(210, 85, 79));
+        jPass.setText("jPasswordField1");
+        jPass.setBorder(null);
+        jPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPasswordMouseClicked(evt);
+                jPassMouseClicked(evt);
             }
         });
 
@@ -122,7 +122,7 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LoginPaneLayout.createSequentialGroup()
                             .addComponent(lblKey)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jPass, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(LoginPaneLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(LoginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -169,7 +169,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(lblContraseñaLetra)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LoginPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPass, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblKey))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparatorDos, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,16 +206,16 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_IngresarUsuarioMouseClicked
 
-    private void jPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordMouseClicked
-        jPassword.setText("");
-    }//GEN-LAST:event_jPasswordMouseClicked
+    private void jPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPassMouseClicked
+        jPass.setText("");
+    }//GEN-LAST:event_jPassMouseClicked
 
     private void IngresarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IngresarUsuarioActionPerformed
 
     private void jbntIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbntIniciarSesionMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jbntIniciarSesionMouseClicked
 
     private void jbntIniciarSesionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbntIniciarSesionKeyPressed
@@ -256,11 +256,11 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cerrar;
-    private javax.swing.JTextField IngresarUsuario;
+    public static javax.swing.JTextField IngresarUsuario;
     private javax.swing.JPanel LoginPane;
     private javax.swing.JLabel Minimizar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPassword;
+    public static javax.swing.JPasswordField jPass;
     private javax.swing.JSeparator jSeparatorDos;
     private javax.swing.JSeparator jSeparatorUno;
     private javax.swing.JButton jbntIniciarSesion;

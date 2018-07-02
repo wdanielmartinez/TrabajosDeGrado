@@ -1,5 +1,7 @@
 package Frames;
 
+import javax.swing.JOptionPane;
+
 public class IngresarPagina2 extends javax.swing.JFrame {
 
     public IngresarPagina2() {
@@ -78,6 +80,11 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         lblSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_next_2.png"))); // NOI18N
         lblSiguiente.setText("Siguiente");
         lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSiguienteMouseClicked(evt);
+            }
+        });
         jPanel2.add(lblSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 490, 160, 60));
 
         lblTelefonoTrabajo.setBackground(new java.awt.Color(0, 0, 0));
@@ -263,6 +270,19 @@ public class IngresarPagina2 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtNumIntegrantesKeyTyped
+
+    private void lblSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSiguienteMouseClicked
+        if((txtLugarTrabajo.getText().equals("")) || (txtTelefonoTrabajo.getText().equals("")) ||
+                (txtAsesor.getText().equals("")) || (txtDirector.getText().equals("")) || (jTextAreaTema.getText().equals(""))){
+            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+        }
+        else{
+            IngresarPagina1 alumno = new IngresarPagina1();
+            alumno.setVisible(true);
+            this.dispose();
+            
+        }
+    }//GEN-LAST:event_lblSiguienteMouseClicked
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
