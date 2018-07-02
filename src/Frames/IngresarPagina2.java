@@ -19,7 +19,6 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         lblBack = new javax.swing.JLabel();
         lblIngresarAlumnoTitulo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         lblSiguiente = new javax.swing.JLabel();
         lblTelefonoTrabajo = new javax.swing.JLabel();
         txtDirector = new javax.swing.JTextField();
@@ -70,10 +69,6 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Decker", 1, 12)); // NOI18N
-        jLabel3.setText("Página 1 de 2");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, -1, -1));
-
         lblSiguiente.setFont(new java.awt.Font("Decker", 1, 18)); // NOI18N
         lblSiguiente.setForeground(new java.awt.Color(255, 102, 102));
         lblSiguiente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -95,6 +90,14 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         txtDirector.setBackground(new java.awt.Color(204, 204, 204));
         txtDirector.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtDirector.setForeground(new java.awt.Color(0, 51, 51));
+        txtDirector.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDirectorKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDirectorKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 510, 30));
 
         lblTiempo.setBackground(new java.awt.Color(0, 0, 0));
@@ -130,22 +133,41 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         txtLugarTrabajo.setBackground(new java.awt.Color(204, 204, 204));
         txtLugarTrabajo.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtLugarTrabajo.setForeground(new java.awt.Color(0, 51, 51));
+        txtLugarTrabajo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLugarTrabajoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLugarTrabajoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtLugarTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 790, 30));
 
         txtAsesor.setBackground(new java.awt.Color(204, 204, 204));
         txtAsesor.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtAsesor.setForeground(new java.awt.Color(0, 51, 51));
-        jPanel2.add(txtAsesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 800, 30));
+        txtAsesor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAsesorKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAsesorKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtAsesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 800, 30));
 
         txtTelefonoTrabajo.setBackground(new java.awt.Color(204, 204, 204));
         txtTelefonoTrabajo.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtTelefonoTrabajo.setForeground(new java.awt.Color(0, 51, 51));
         txtTelefonoTrabajo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefonoTrabajoKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoTrabajoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtTelefonoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 220, 30));
+        jPanel2.add(txtTelefonoTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 220, 30));
 
         lblFechaAsesoria.setBackground(new java.awt.Color(0, 0, 0));
         lblFechaAsesoria.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
@@ -159,7 +181,7 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         jTextAreaTema.setRows(5);
         jScrollPane1.setViewportView(jTextAreaTema);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 920, 110));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 920, 110));
 
         btnGroupTiempo.add(rbtnOpcion1);
         rbtnOpcion1.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
@@ -211,11 +233,14 @@ public class IngresarPagina2 extends javax.swing.JFrame {
         txtNumIntegrantes.setBackground(new java.awt.Color(204, 204, 204));
         txtNumIntegrantes.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
         txtNumIntegrantes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumIntegrantesKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNumIntegrantesKeyTyped(evt);
             }
         });
-        jPanel2.add(txtNumIntegrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 120, -1));
+        jPanel2.add(txtNumIntegrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 120, -1));
 
         jFecha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jPanel2.add(jFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 230, 30));
@@ -283,6 +308,57 @@ public class IngresarPagina2 extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_lblSiguienteMouseClicked
+
+    private void txtLugarTrabajoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLugarTrabajoKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtTelefonoTrabajo.requestFocus();
+        }
+    }//GEN-LAST:event_txtLugarTrabajoKeyPressed
+
+    private void txtTelefonoTrabajoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoTrabajoKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtAsesor.requestFocus();
+        }
+    }//GEN-LAST:event_txtTelefonoTrabajoKeyPressed
+
+    private void txtAsesorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAsesorKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtDirector.requestFocus();
+        }
+    }//GEN-LAST:event_txtAsesorKeyPressed
+
+    private void txtDirectorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDirectorKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtNumIntegrantes.requestFocus();
+        }
+    }//GEN-LAST:event_txtDirectorKeyPressed
+
+    private void txtNumIntegrantesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumIntegrantesKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            jTextAreaTema.requestFocus();
+        }
+    }//GEN-LAST:event_txtNumIntegrantesKeyPressed
+
+    private void txtLugarTrabajoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLugarTrabajoKeyTyped
+        if(txtLugarTrabajo.getText().length()==175){
+        
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtLugarTrabajoKeyTyped
+
+    private void txtAsesorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAsesorKeyTyped
+        if(txtAsesor.getText().length()==100){
+        
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAsesorKeyTyped
+
+    private void txtDirectorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDirectorKeyTyped
+        if(txtDirector.getText().length()==100){
+        
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDirectorKeyTyped
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -322,7 +398,6 @@ public class IngresarPagina2 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbHora;
     private javax.swing.JComboBox<String> cbTurno;
     private com.toedter.calendar.JDateChooser jFecha;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCuantoTiempo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -39,7 +39,6 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtPlanEstudio = new javax.swing.JTextField();
         lblUnidadesValorativas = new javax.swing.JLabel();
         txtUnidadesValorativas = new javax.swing.JTextField();
-        lblPaginaUno = new javax.swing.JLabel();
         lblAnioAcademico1 = new javax.swing.JLabel();
         txtAnioAcademico = new javax.swing.JTextField();
         cboxCiclo = new javax.swing.JComboBox<>();
@@ -74,7 +73,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
 
         lblIngresarAlumnoTitulo.setFont(new java.awt.Font("Decker", 1, 48)); // NOI18N
         lblIngresarAlumnoTitulo.setForeground(new java.awt.Color(127, 21, 17));
-        lblIngresarAlumnoTitulo.setText("Datos del alumno");
+        lblIngresarAlumnoTitulo.setText("Datos del Alumno");
         jPanel1.add(lblIngresarAlumnoTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 210));
@@ -93,6 +92,11 @@ public class IngresarPagina1 extends javax.swing.JFrame {
                 lblGuardarMouseClicked(evt);
             }
         });
+        lblGuardar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblGuardarKeyPressed(evt);
+            }
+        });
         jPanel2.add(lblGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 160, 60));
 
         lblCiclo.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
@@ -101,7 +105,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
 
         lblNombre.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblNombre.setText("Nombre:");
-        jPanel2.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+        jPanel2.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         lblApellidos.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblApellidos.setText("Apellidos:");
@@ -134,12 +138,23 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtDireccionResidencia.setBackground(new java.awt.Color(204, 204, 204));
         txtDireccionResidencia.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtDireccionResidencia.setForeground(new java.awt.Color(0, 51, 51));
+        txtDireccionResidencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDireccionResidenciaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDireccionResidenciaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDireccionResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 720, 30));
 
         txtApellidos.setBackground(new java.awt.Color(204, 204, 204));
         txtApellidos.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtApellidos.setForeground(new java.awt.Color(0, 51, 51));
         txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtApellidosKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApellidosKeyTyped(evt);
             }
@@ -156,6 +171,9 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtNombre.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(0, 51, 51));
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombreKeyTyped(evt);
             }
@@ -179,6 +197,9 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtTelefono.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtTelefono.setForeground(new java.awt.Color(0, 51, 51));
         txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoKeyTyped(evt);
             }
@@ -188,7 +209,15 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtPlanEstudio.setBackground(new java.awt.Color(204, 204, 204));
         txtPlanEstudio.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtPlanEstudio.setForeground(new java.awt.Color(0, 51, 51));
+        txtPlanEstudio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPlanEstudioActionPerformed(evt);
+            }
+        });
         txtPlanEstudio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPlanEstudioKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPlanEstudioKeyTyped(evt);
             }
@@ -209,15 +238,14 @@ public class IngresarPagina1 extends javax.swing.JFrame {
             }
         });
         txtUnidadesValorativas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUnidadesValorativasKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtUnidadesValorativasKeyTyped(evt);
             }
         });
         jPanel2.add(txtUnidadesValorativas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, 230, 30));
-
-        lblPaginaUno.setFont(new java.awt.Font("Decker", 1, 12)); // NOI18N
-        lblPaginaUno.setText("Página 2 de 2");
-        jPanel2.add(lblPaginaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, -1, -1));
 
         lblAnioAcademico1.setBackground(new java.awt.Color(0, 0, 0));
         lblAnioAcademico1.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
@@ -228,6 +256,9 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtAnioAcademico.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtAnioAcademico.setForeground(new java.awt.Color(0, 51, 51));
         txtAnioAcademico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnioAcademicoKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtAnioAcademicoKeyTyped(evt);
             }
@@ -263,7 +294,15 @@ public class IngresarPagina1 extends javax.swing.JFrame {
 
         txtAnioIngreso.setBackground(new java.awt.Color(204, 204, 204));
         txtAnioIngreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
+        txtAnioIngreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAnioIngresoActionPerformed(evt);
+            }
+        });
         txtAnioIngreso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnioIngresoKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtAnioIngresoKeyTyped(evt);
             }
@@ -277,6 +316,9 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtAnioEgreso.setBackground(new java.awt.Color(204, 204, 204));
         txtAnioEgreso.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
         txtAnioEgreso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnioEgresoKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtAnioEgresoKeyTyped(evt);
             }
@@ -474,6 +516,93 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         tesis.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblBackMouseClicked
+
+    private void txtAnioAcademicoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnioAcademicoKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtNombre.requestFocus();
+        }
+    }//GEN-LAST:event_txtAnioAcademicoKeyPressed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtApellidos.requestFocus();
+        }
+    }//GEN-LAST:event_txtNombreKeyPressed
+
+    private void txtApellidosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtCarnet.requestFocus();
+        }
+    }//GEN-LAST:event_txtApellidosKeyPressed
+
+    private void txtDireccionResidenciaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionResidenciaKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtTelefono.requestFocus();
+        }
+    }//GEN-LAST:event_txtDireccionResidenciaKeyPressed
+
+    private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtPlanEstudio.requestFocus();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyPressed
+
+    private void txtPlanEstudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlanEstudioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPlanEstudioActionPerformed
+
+    private void txtPlanEstudioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlanEstudioKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtAnioIngreso.requestFocus();
+        }
+    }//GEN-LAST:event_txtPlanEstudioKeyPressed
+
+    private void txtAnioIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioIngresoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnioIngresoActionPerformed
+
+    private void txtAnioIngresoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnioIngresoKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtAnioEgreso.requestFocus();
+        }
+    }//GEN-LAST:event_txtAnioIngresoKeyPressed
+
+    private void txtAnioEgresoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnioEgresoKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtUnidadesValorativas.requestFocus();
+        }
+    }//GEN-LAST:event_txtAnioEgresoKeyPressed
+
+    private void txtUnidadesValorativasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnidadesValorativasKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            lblGuardar.requestFocus();
+        }
+    }//GEN-LAST:event_txtUnidadesValorativasKeyPressed
+
+    private void lblGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblGuardarKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            if((txtNombre.getText().equals("")) || (txtApellidos.getText().equals("")) || (txtAnioAcademico.getText().equals(""))
+                || (txtCarnet.getText().equals("")) || (txtDireccionResidencia.getText().equals("")) || (txtTelefono.getText().equals(""))
+                || (txtPlanEstudio.getText().equals("") || (txtCodigo.getText().equals("")) || (txtAnioIngreso.getText().equals(""))
+                || (txtAnioEgreso.getText().equals("")) || (txtUnidadesValorativas.getText().equals("")) )){
+            JOptionPane.showMessageDialog(this, "Por favor llene todos los campos");
+            
+            
+            }
+            else{
+                this.dispose();
+                Inicio inicio = new Inicio();
+                inicio.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_lblGuardarKeyPressed
+
+    private void txtDireccionResidenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionResidenciaKeyTyped
+        if(txtDireccionResidencia.getText().length()==175){
+        
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDireccionResidenciaKeyTyped
 //>>>>>>> 6f39aee5575fd00f0dd210a96d52ba537596cd68
 
     public static void main(String args[]) {
@@ -531,7 +660,6 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblIngresarAlumnoTitulo;
     private javax.swing.JLabel lblLogoMinerva;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblPaginaUno;
     private javax.swing.JLabel lblPlanEstudio;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblUnidadesValorativas;
