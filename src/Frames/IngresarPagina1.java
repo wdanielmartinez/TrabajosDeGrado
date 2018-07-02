@@ -81,6 +81,11 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         lblGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon_next_2.png"))); // NOI18N
         lblGuardar.setText("Aceptar");
         lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblGuardarMouseClicked(evt);
+            }
+        });
         jPanel2.add(lblGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 160, 60));
 
         lblCiclo.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
@@ -362,6 +367,15 @@ public class IngresarPagina1 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtCarnetKeyTyped
+
+    private void lblGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGuardarMouseClicked
+        if((txtNombre.getText().equals("")) || (txtApellidos.getText().equals("")) || (txtAnioAcademico.getText().equals(""))
+                || (txtCarnet.getText().equals("")) || (txtDireccionResidencia.getText().equals("")) || (txtTelefono.getText().equals(""))
+                || (txtPlanEstudio.getText().equals("") || (txtCodigo.getText().equals("")) || (txtAnioIngreso.getText().equals(""))
+                || (txtAnioEgreso.getText().equals("")) || (txtUnidadesValorativas.getText().equals("")) )){
+            JOptionPane.showMessageDialog(this, "Por favor llene todos los campos");
+        }
+    }//GEN-LAST:event_lblGuardarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
