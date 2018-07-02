@@ -6,10 +6,10 @@ import java.util.logging.Logger;
 
 public class Conexion {
 
-    private final String base = "trabajodegrados";
+    private final String base = "bdtrabajosdegrado";
     private final String user = "root";
-    private final String password = "wild24174485***";//contraseña
-    private final String url = "jdbc://myql://localhost:3306/" + base;
+    private final String password = "";//contraseña
+    private final String url = "jdbc://myql://localhost:3306/"+base;
     private Connection con = null;
 
     public Connection getConexion() {
