@@ -1,10 +1,11 @@
 package Frames;
 
+import Clases.validacioncarnet;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 public class IngresarPagina1 extends javax.swing.JFrame {
-
+    validacioncarnet Val=new validacioncarnet();
     public IngresarPagina1() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -47,6 +48,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtAnioIngreso = new javax.swing.JTextField();
         lblAnioEgreso = new javax.swing.JLabel();
         txtAnioEgreso = new javax.swing.JTextField();
+        lblConfirmacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,7 +99,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
 
         lblCarnet.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblCarnet.setText("Carnet:");
-        jPanel2.add(lblCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+        jPanel2.add(lblCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         lblDireccionResidencia.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         lblDireccionResidencia.setText("Dirección de Residencia:");
@@ -122,7 +124,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtDireccionResidencia.setBackground(new java.awt.Color(204, 204, 204));
         txtDireccionResidencia.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtDireccionResidencia.setForeground(new java.awt.Color(0, 51, 51));
-        jPanel2.add(txtDireccionResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 720, 30));
+        jPanel2.add(txtDireccionResidencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 720, 30));
 
         txtApellidos.setBackground(new java.awt.Color(204, 204, 204));
         txtApellidos.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
@@ -154,11 +156,14 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         txtCarnet.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         txtCarnet.setForeground(new java.awt.Color(0, 51, 51));
         txtCarnet.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCarnetKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCarnetKeyTyped(evt);
             }
         });
-        jPanel2.add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 220, 30));
+        jPanel2.add(txtCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 220, 30));
 
         txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
         txtTelefono.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
@@ -230,6 +235,11 @@ public class IngresarPagina1 extends javax.swing.JFrame {
                 cboxCarreraItemStateChanged(evt);
             }
         });
+        cboxCarrera.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboxCarreraMouseClicked(evt);
+            }
+        });
         cboxCarrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboxCarreraActionPerformed(evt);
@@ -262,6 +272,10 @@ public class IngresarPagina1 extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtAnioEgreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 120, -1));
+
+        lblConfirmacion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblConfirmacion.setForeground(new java.awt.Color(255, 0, 51));
+        jPanel2.add(lblConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 190, 20));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 1110, 460));
 
@@ -363,6 +377,71 @@ public class IngresarPagina1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCarnetKeyTyped
 
+    private void txtCarnetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCarnetKeyPressed
+        if(evt.getKeyCode()==evt.VK_ENTER){
+            txtDireccionResidencia.requestFocus();
+            String cadena=txtCarnet.getText();
+            lblConfirmacion.setText("");
+            if(Val.isInteger(cadena.substring(2))){
+        
+            if(!Val.isInteger(cadena.substring(0, 1))){
+                if(!Val.isInteger(cadena.substring(1, 2))){
+            
+                lblConfirmacion.setText("Formato de Carnet Valido");
+                
+                //SalidaNumeros.setText(cadena.substring(2));
+                //SalidaLetras.setText(cadena.substring(0, 2));
+                }else{
+                lblConfirmacion.setText("Formato de Carnet Invalido");
+                JOptionPane.showMessageDialog(this, "Ingrese un Carnet Valido");
+                txtCarnet.setText("");
+            }
+            }else{
+            lblConfirmacion.setText("Formato de Carnet Invalido");
+            JOptionPane.showMessageDialog(this, "Ingrese un Carnet Valido");
+            txtCarnet.setText("");
+        }
+        }else{
+        
+            lblConfirmacion.setText("Formato de Carnet Invalido");
+            JOptionPane.showMessageDialog(this, "Ingrese un Carnet Valido");
+            txtCarnet.setText("");
+
+        }
+        }
+    }//GEN-LAST:event_txtCarnetKeyPressed
+
+    private void cboxCarreraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboxCarreraMouseClicked
+        String cadena=txtCarnet.getText();
+            lblConfirmacion.setText("");
+            if(Val.isInteger(cadena.substring(2))){
+        
+            if(!Val.isInteger(cadena.substring(0, 1))){
+                if(!Val.isInteger(cadena.substring(1, 2))){
+            
+                lblConfirmacion.setText("Formato de Carnet Valido");
+                
+                //SalidaNumeros.setText(cadena.substring(2));
+                //SalidaLetras.setText(cadena.substring(0, 2));
+                }else{
+                lblConfirmacion.setText("Formato de Carnet Invalido");
+                JOptionPane.showMessageDialog(this, "Ingrese un Carnet Valido");
+                txtCarnet.setText("");
+            }
+            }else{
+            lblConfirmacion.setText("Formato de Carnet Invalido");
+            JOptionPane.showMessageDialog(this, "Ingrese un Carnet Valido");
+            txtCarnet.setText("");
+        }
+        }else{
+        
+            lblConfirmacion.setText("Formato de Carnet Invalido");
+            JOptionPane.showMessageDialog(this, "Ingrese un Carnet Valido");
+            txtCarnet.setText("");
+
+        }
+    }//GEN-LAST:event_cboxCarreraMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -412,6 +491,7 @@ public class IngresarPagina1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblCarrera;
     private javax.swing.JLabel lblCiclo;
     private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblConfirmacion;
     private javax.swing.JLabel lblDireccionResidencia;
     private javax.swing.JLabel lblGuardar;
     private javax.swing.JLabel lblIngresarAlumnoTitulo;
